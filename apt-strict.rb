@@ -3,7 +3,7 @@ require "formula"
 class AptStrict < Formula
   homepage "https://github.com/selivan/apt-strict"
   url "git@github.com:rivik/apt-strict.git", :using => :git
-  version "0.5-3"
+  version "0.5-4"
 
   depends_on "ansible"
 
