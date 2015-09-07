@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 import apt
 import sys
@@ -6,7 +6,7 @@ from subprocess import Popen, PIPE
 import imp
 
 apt_strict = None
-for path in ('./apt_strict.py', '/usr/share/apt_strict/apt_strict.py'):
+for path in ('./apt_strict.py', '/usr/share/apt_strict/apt_strict.py', '/usr/local/share/apt_strict/apt_strict.py'):
     try:
         apt_strict = imp.load_source('apt_strict', path)
     except:
