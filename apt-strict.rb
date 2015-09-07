@@ -12,6 +12,6 @@ class AptStrict < Formula
         (share/'apt_strict').install 'executable.py' 
         (etc/'bash_completion.d').install 'bash_completion.d/apt-strict'
         bin.install_symlink (share/'apt_strict/executable.py') => 'apt-strict'
-        (share/'ansible/packaging').install_symlink (share/'apt_strict.py') => 'apt_strict'
+        (share/'ansible/packaging').install_symlink (share/'apt_strict/apt_strict.py') => 'apt_strict'
   end
 end
