@@ -3,17 +3,12 @@ require "formula"
 class AptStrict < Formula
   homepage "https://github.com/selivan/apt-strict"
   url "git@github.com:rivik/apt-strict.git", :using => :git
-  version "0.5-9"
+  version "0.5-10"
 
   depends_on "ansible"
-  depends_on "apt" => :python
 
   def install
-        (share/'apt_strict').install 'executable.py' 
-        (share/'apt_strict').install 'apt_strict.py' 
-        (etc/'bash_completion.d').install 'bash_completion.d/apt-strict'
-
-        (share/'ansible/packaging').install_symlink (share/'apt_strict/apt_strict.py') => 'apt_strict'
-        bin.install_symlink (share/'apt_strict/executable.py') => 'apt-strict'
+        # no apt for max os x =), install ansible module only
+        (share/'ansible/packaging').install 'apt_strict.py' => 'apt_strict'
   end
 end
