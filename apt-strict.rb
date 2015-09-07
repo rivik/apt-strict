@@ -3,9 +3,10 @@ require "formula"
 class AptStrict < Formula
   homepage "https://github.com/selivan/apt-strict"
   url "git@github.com:rivik/apt-strict.git", :using => :git
-  version "0.5-8"
+  version "0.5-9"
 
   depends_on "ansible"
+  depends_on "apt" => :python
 
   def install
         (share/'apt_strict').install 'executable.py' 
