@@ -8,10 +8,10 @@ class AptStrict < Formula
   depends_on "ansible"
 
   def install
-        (share/"apt_strict").install "apt_strict.py" 
-        (share/"apt_strict").install "executable.py" 
-        (etc/"bash_completion.d").install "bash_completion.d/apt-strict"
-        bin.install_symlink :src => share/"apt_strict/executable.py", :dst => "apt-strict"
-        (share/"ansible/packaging").install_symlink :src => share/"apt_strict.py", :dst => "apt_strict"
+        (share/'apt_strict').install 'apt_strict.py' 
+        (share/'apt_strict').install 'executable.py' 
+        (etc/'bash_completion.d').install 'bash_completion.d/apt-strict'
+        bin.install_symlink (share/'apt_strict/executable.py') => 'apt-strict'
+        (share/'ansible/packaging').install_symlink (share/'apt_strict.py') => 'apt_strict'
   end
 end
