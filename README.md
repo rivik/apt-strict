@@ -24,7 +24,14 @@ Options have same meaning as in apt module:
  - force
  - dpkg_options
 
-Does not support `ansible-playbook --check`
+Does not support `ansible-playbook --check`. Since ansible 2.1, you can use this trick to avoid running task in `--check` mode: `when: not ansible_check_mode`
+
+### Mac OS X installation
+You can install ansible module via brew (without any apt stuff):
+
+    brew tap apt-strict/tap git@github.com:selivan/apt-strict.git
+    brew install apt-strict
+    # ensure /usr/local/share/ansible in 'library =' section of your ansible.cfg
 
 ### max os x installation
 You can install ansible module via brew (without any apt stuff):
@@ -40,3 +47,5 @@ http://apt.alioth.debian.org/python-apt-doc/
 http://fahdshariff.blogspot.ru/2011/04/writing-your-own-bash-completion.html
 
 http://docs.ansible.com/developing_modules.html
+
+**P.S.** If this code is useful for you - don't forget to put a star on it's [github repo](https://github.com/selivan/apt-strict).
